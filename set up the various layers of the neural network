@@ -1,0 +1,5 @@
+layer_1 = tf.add(tf.matmul(X, weights['weight1']), biases['bias1'])
+layer_2 = tf.add(tf.matmul(layer_1, weights['weight2']), biases['bias2'])
+layer_3 = tf.add(tf.matmul(layer_2, weights['weight3']), biases['bias3'])
+layer_drop = tf.nn.dropout(layer_3, prob)
+final_layer = tf.matmul(layer_3, weights['out']) + biases['out']
