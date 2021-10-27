@@ -1,0 +1,12 @@
+cross_entropy = tf.reduce_mean(
+    tf.nn.softmax_cross_entropy_with_logits(
+        labels=Y, logits=final_layer
+        ))
+training = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
+
+predict = tf.equal(tf.argmax(final_layer, 1), tf.argmax(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(predict, tf.float32))
+
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
