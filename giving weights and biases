@@ -1,0 +1,13 @@
+weights = {
+    'weight1': tf.Variable(tf.truncated_normal([no_input, no_hidden1], stddev=0.1)),
+    'weight2': tf.Variable(tf.truncated_normal([no_hidden1, no_hidden2], stddev=0.1)),
+    'weight3': tf.Variable(tf.truncated_normal([no_hidden2, no_hidden3], stddev=0.1)),
+    'out': tf.Variable(tf.truncated_normal([no_hidden3, no_output], stddev=0.1)),
+}
+
+biases = {
+    'bias1': tf.Variable(tf.constant(0.1, shape=[no_hidden1])),
+    'bias2': tf.Variable(tf.constant(0.1, shape=[no_hidden2])),
+    'bias3': tf.Variable(tf.constant(0.1, shape=[no_hidden3])),
+    'out': tf.Variable(tf.constant(0.1, shape=[no_output]))
+}
