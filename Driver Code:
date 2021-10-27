@@ -1,0 +1,19 @@
+for i in range(no_iterations):
+    x, y = mnist_data.train.next_batch(batch_size)
+    sess.run(training, feed_dict={
+        X: x, Y: y, prob: dropout
+        })
+
+    if i % 100 == 0:
+        minibatch_loss, minibatch_accuracy = sess.run(
+            [cross_entropy, accuracy],
+            feed_dict={X: x, Y: y, prob: 1.0}
+            )
+        print(
+            "Iteration",
+            str(i),
+            "\t| Loss =",
+            str(minibatch_loss),
+            "\t| Accuracy% =",
+            str(minibatch_accuracy*100)
+            )
