@@ -1,0 +1,5 @@
+no_input = 784  #(28x28 pixels)
+no_hidden1 = 1024 
+no_hidden2 = 512
+no_hidden3 = 256 
+no_output = 10 
